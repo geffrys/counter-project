@@ -36,8 +36,11 @@ jobs:
     
       - name: Test with Gradle
         run: ./gradlew test
+        working-directory: nopmocounter
 
       - name: Build with Gradle
         run: ./gradlew build
+        working-directory: nopmocounter
+
 
     
