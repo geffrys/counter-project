@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: nopmocounter
+  datasource:
+    url: ${DATABASE_URL:jdbc:mysql://localhost:3306/}
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:root}
+    driver-class-name: ${DATABASE_DRIVER_CLASS_NAME:com.mysql.cj.jdbc.Driver}
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_HIBERNATE_DDL_AUTO:update}
+    show-sql: ${JPA_SHOW_SQL:true}
+    properties:
+      hibernate:
+        dialect: ${JPA_HIBERNATE_DIALECT:org.hibernate.dialect.MySQL8Dialect}
+server:
+  port: ${SERVER_PORT:8000}
