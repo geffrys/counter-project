@@ -7,10 +7,11 @@ public class Counter {
     private Long userId;
     private Instant startTime;
     private Instant finishTime;
+    private Instant createdAt;
 
     Counter(){}
     
-    Counter(Long counterId, Long userId, Instant startTime, Instant finishTime){
+    Counter(Long counterId, Long userId, Instant startTime, Instant finishTime, Instant createdAt){
         setCounterId(counterId);
         setUserId(userId);
         setStartTime(startTime);
@@ -29,6 +30,9 @@ public class Counter {
     public Long getUserId() {
         return userId;
     }
+    public Instant getCreatedAt(){
+        return createdAt;
+    }
 
     public void setCounterId(Long counterId) {
         this.counterId = counterId;
@@ -41,6 +45,9 @@ public class Counter {
     }
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+    public void setCreatedAt(Instant createdAt){
+        this.createdAt = createdAt;
     }
 }
 
