@@ -3,7 +3,6 @@ version: '3.8'
 services:
   mysql:
     image: mysql:8.0
-    container_name: nopmocounter-mysql
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -11,3 +10,9 @@ services:
       MYSQL_PASSWORD: admin
     ports:
       - "3311:3306"
+    networks:
+      - mysql_network
+
+networks:
+  mysql_network:
+    driver: bridge
