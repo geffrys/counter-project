@@ -8,6 +8,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: nopmo
     ports:
       - "3311:3306"
     networks:

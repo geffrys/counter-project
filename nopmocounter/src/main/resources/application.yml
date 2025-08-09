@@ -2,10 +2,10 @@ spring:
   application:
     name: nopmocounter
   datasource:
-    url: ${DATABASE_URL:jdbc:mysql://mysql:3311}
+    url: ${DATABASE_URL:jdbc:mysql://127.0.0.1:3311/nopmo?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
     username: ${DATABASE_USERNAME:root}
     password: ${DATABASE_PASSWORD:root}
-    driver-class-name: ${DATABASE_DRIVER_CLASS_NAME:com.mysql.cj.jdbc.Driver}
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: ${JPA_HIBERNATE_DDL_AUTO:update}
