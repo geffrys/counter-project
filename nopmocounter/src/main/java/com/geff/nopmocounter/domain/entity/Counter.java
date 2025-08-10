@@ -9,9 +9,9 @@ public class Counter {
     private Instant finishTime;
     private Instant createdAt;
 
-    Counter(){}
+    public Counter(){}
     
-    Counter(Long counterId, Long userId, Instant startTime, Instant finishTime, Instant createdAt){
+    public Counter(Long counterId, Long userId, Instant startTime, Instant finishTime, Instant createdAt){
         setCounterId(counterId);
         setUserId(userId);
         setStartTime(startTime);

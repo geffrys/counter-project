@@ -8,6 +8,8 @@ import java.util.Optional;
 
 import com.geff.nopmocounter.domain.entity.Counter;
 import com.geff.nopmocounter.domain.repository.CounterRepository;
+import com.geff.nopmocounter.infraestructure.repository.entity.CounterEntity;
+import com.geff.nopmocounter.infraestructure.repository.mapper.CounterMapper;
 
 @Getter
 @Setter
@@ -17,27 +19,23 @@ public class CounterRepositoryImpl  implements CounterRepository {
 
     @Override
     public Optional<Counter> findById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+
+        return jpaCounterRepository.findById(id).map(CounterMapper::toCounter);
     }
 
     @Override
     public Optional<Counter> findByUserId(Long userId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findByUserId'");
+        return jpaCounterRepository.findByUserId(userId).map(CounterMapper::toCounter);
     }
 
-    @Override
-    public Counter save(Counter counter) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+    
+    public Counter save(CounterEntity counter) {
+        return jpaCounterRepository.save(counter).map(CounterMapper::toCounter).orElse(null);
     }
 
     @Override
     public void deleteById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+        jpaCounterRepository.deleteById(id);
     }
 
-    
 }
